@@ -1,15 +1,18 @@
-﻿namespace SCPSharp
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using SCPSharp.Views;
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+namespace SCPSharp;
+
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+
+        UserAppTheme = AppTheme.Light;
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new MainWindow();
     }
 }

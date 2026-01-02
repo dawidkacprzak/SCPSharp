@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SCPSharp"
-    Title="SCPSharp">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    xmlns:views="clr-namespace:SCPSharp.Views"
+    Title="SCPSharp"
+    Shell.TabBarBackgroundColor="{StaticResource TabBarColor}"
+    Shell.TabBarForegroundColor="{StaticResource TextColor}"
+    Shell.TabBarTitleColor="{StaticResource TextColor}"
+    Shell.TabBarUnselectedColor="{StaticResource TextColor}">
+    <TabBar>
+        <Tab Title="Saved sessions">
+            <ShellContent ContentTemplate="{DataTemplate views:SessionsView}" Route="SessionsView" />
+        </Tab>
+        <Tab Title="File explorer">
+            <ShellContent ContentTemplate="{DataTemplate views:FileExplorerView}" Route="FileExplorerView" />
+        </Tab>
+    </TabBar>
 </Shell>
